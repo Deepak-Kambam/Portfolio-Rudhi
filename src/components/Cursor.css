@@ -1,0 +1,70 @@
+.cursor-dot {
+  position: fixed;
+  top: -3px;
+  left: -3px;
+  width: 6px;
+  height: 6px;
+  background: var(--text);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: -18px;
+  left: -18px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  will-change: transform;
+  transition: width 0.35s ease, height 0.35s ease,
+              top 0.35s ease, left 0.35s ease,
+              border-color 0.35s ease,
+              background 0.35s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover over interactive elements */
+.cursor-ring--hover {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: -25px;
+  border-color: var(--pink);
+  background: var(--pink-glow);
+}
+
+/* Hover over 3D canvas */
+.cursor-ring--explore {
+  width: 70px;
+  height: 70px;
+  top: -35px;
+  left: -35px;
+  border-color: var(--pink);
+  background: rgba(240, 90, 155, 0.08);
+}
+
+.cursor-label {
+  font-family: var(--font-display);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--pink);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Hide system cursor more aggressively */
+@media (hover: hover) {
+  html, body, *, *::before, *::after {
+    cursor: none !important;
+  }
+}

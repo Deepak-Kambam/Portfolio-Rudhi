@@ -1,0 +1,803 @@
+/* ═══════════════════════════════════════════════════════
+   TYPOGRAPHY UTILITIES
+═══════════════════════════════════════════════════════ */
+
+.display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 9rem);
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+.display-md {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 4.8rem);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.display-sm {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+.body-lg {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.7;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.body-md {
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  line-height: 1.72;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.body-sm {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.label-sm {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+.label-xs {
+  font-family: var(--font-display);
+  font-size: 0.60rem;
+  font-weight: 500;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.text-dim { color: var(--text-dim) !important; }
+.text-pink { color: var(--pink); }
+.text-muted { color: var(--text-muted); }
+
+/* ═══════════════════════════════════════════════════════
+   LAYOUT UTILITIES
+═══════════════════════════════════════════════════════ */
+
+.page-x {
+  padding-left: var(--page-x);
+  padding-right: var(--page-x);
+}
+
+.section-index {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4rem;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════════════════ */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.82rem 1.8rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  cursor: none;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #fff;
+}
+
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  padding: 0.82rem 0;
+  cursor: none;
+  transition: color 0.25s ease;
+}
+
+.btn-text:hover {
+  color: var(--text);
+}
+
+.btn-link {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  cursor: none;
+  padding: 0;
+  transition: color 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.btn-link:hover {
+  color: var(--pink);
+}
+
+/* ═══════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════ */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  overflow: hidden;
+  /* Warm atmospheric blush on the right; cool dark on the left */
+  background:
+    radial-gradient(ellipse 90% 70% at 95% 50%, rgba(240, 90, 155, 0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 80% at 100% 20%, rgba(155, 143, 200, 0.06) 0%, transparent 55%),
+    var(--bg);
+}
+
+/* Horizontal rule through hero */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, var(--border) 15%, var(--border) 85%, transparent 100%);
+}
+
+/* ── Hero Left */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem var(--page-x) 6rem;
+  position: relative;
+  z-index: 2;
+
+  /* Very subtle blush warmth in left area */
+  background:
+    radial-gradient(ellipse 80% 50% at -10% 60%, rgba(232, 120, 154, 0.04) 0%, transparent 70%);
+
+  /* Right border line — rose-tinted gradient fade */
+  border-right: 1px solid transparent;
+  border-image: linear-gradient(to bottom, transparent 0%, rgba(240, 90, 155, 0.18) 30%, rgba(240, 90, 155, 0.18) 70%, transparent 100%) 1;
+}
+
+.hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+}
+
+.hero-tag-sep {
+  color: var(--rose);
+  opacity: 0.6;
+}
+
+/* Delicate decorative diamond marker before role labels */
+.hero-tag::before {
+  content: '◇';
+  color: var(--pink);
+  font-size: 0.5rem;
+  opacity: 0.7;
+  letter-spacing: 0;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6.5vw, 7.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  color: var(--text);
+  margin-bottom: 2rem;
+  opacity: 0;
+  /* Soft warm glow — feminine not garish */
+  text-shadow:
+    0 0 80px rgba(240, 90, 155, 0.18),
+    0 0 160px rgba(240, 90, 155, 0.06);
+}
+
+.hero-desc {
+  max-width: 38ch;
+  margin-bottom: 3rem;
+  opacity: 0;
+  /* Use elegant italic serif for description */
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0;
+}
+
+/* ── Hero Right (3D Canvas) */
+.hero-right {
+  position: relative;
+  /* Warm blush atmosphere behind the sculpture */
+  background:
+    radial-gradient(ellipse 70% 60% at 55% 50%, rgba(240, 90, 155, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(155, 143, 200, 0.08) 0%, transparent 65%),
+    var(--bg);
+}
+
+.hero-right canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* ── Scroll indicator */
+.hero-scroll {
+  position: absolute;
+  bottom: 2.8rem;
+  left: var(--page-x);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 10;
+  opacity: 0;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 48px;
+  background: var(--border);
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-progress {
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--pink);
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0%   { top: -100%; }
+  100% { top: 100%; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════════════════ */
+
+.about {
+  padding: 8rem 0 8rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+/* Very soft warm gradient in the about section */
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 300px;
+  background: linear-gradient(to bottom, rgba(232, 120, 154, 0.03), transparent);
+  pointer-events: none;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  padding-top: 2rem;
+}
+
+.about-headline {
+  position: sticky;
+  top: 8rem;
+}
+
+.about-headline h2 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--rose-gold);
+  font-size: clamp(2.4rem, 4.5vw, 5rem);
+  line-height: 1.05;
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.about-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* ═══════════════════════════════════════════════════════
+   WORK
+═══════════════════════════════════════════════════════ */
+
+.work {
+  background: var(--bg);
+  padding-top: 8rem;
+  padding-bottom: 0;
+}
+
+.work > .page-x {
+  padding-bottom: 4rem;
+}
+
+.work-list {
+  margin-top: 0;
+}
+
+.work-item {
+  padding: 4rem var(--page-x);
+  cursor: none;
+  position: relative;
+}
+
+.work-item:hover .work-title {
+  color: var(--text-2);
+}
+
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.work-num {
+  color: var(--pink) !important;
+}
+
+.work-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 2.5rem;
+  transition: color 0.3s ease;
+  max-width: 18ch;
+}
+
+/* Project visual area */
+.work-visual-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  position: relative;
+  /* Add subtle rose tint to work borders */
+  border: 1px solid var(--border-2);
+}
+
+.work-visual {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.work-visual-label {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.2em;
+}
+
+.work-visual-accent {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  opacity: 0.7;
+  mix-blend-mode: screen;
+}
+
+.work-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr auto;
+  gap: 2rem;
+  align-items: start;
+}
+
+.work-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.work-desc {
+  grid-column: 3;
+}
+
+.work-rule {
+  height: 1px;
+  background: var(--border);
+  margin-top: 4rem;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SKILLS
+═══════════════════════════════════════════════════════ */
+
+.skills {
+  background: var(--bg-2);
+  padding: 8rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.skills-marquee {
+  margin: 4rem 0;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.4rem 0;
+}
+
+.marquee-viewport {
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee-item {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+  padding: 0 2rem;
+  transition: color 0.25s ease;
+  flex-shrink: 0;
+}
+
+.marquee-item:hover {
+  color: var(--pink);
+}
+
+.marquee-dot {
+  color: var(--text-dim);
+  margin-left: 2rem;
+  opacity: 0.4;
+}
+
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.skill-col {
+  padding: 2.5rem 2rem 2.5rem 0;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.skill-col:last-child { border-right: none; }
+.skill-col:first-child { padding-left: 0; }
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.skill-list-item {
+  color: var(--text-2) !important;
+  transition: color 0.25s ease;
+  padding-left: 0.8rem;
+  border-left: 1px solid transparent;
+}
+
+.skill-list-item:hover {
+  color: var(--text) !important;
+  border-left-color: var(--pink);
+}
+
+/* ═══════════════════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════════════════ */
+
+.contact {
+  background: var(--bg);
+  padding: 8rem 0 6rem;
+}
+
+.contact-headline {
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+}
+
+.contact-headline-accent {
+  color: var(--rose);
+  font-family: var(--font-serif);
+  font-style: italic;
+  display: block;
+  font-size: 1.1em;
+  font-weight: 400;
+  margin-top: 0.2em;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+  border-top: 1px solid var(--border);
+  padding-top: 4rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-link:last-child { border-bottom: none; padding-bottom: 0; }
+
+.contact-link .body-md {
+  color: var(--text-2);
+  transition: color 0.25s ease;
+}
+
+.contact-link:hover .body-md {
+  color: var(--pink);
+}
+
+.contact-cta {
+  align-self: flex-start;
+}
+
+/* Form */
+.contact-form-area {
+  padding-top: 0.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.form-field input,
+.form-field textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.9rem 1rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  outline: none;
+  border-radius: 0;
+  transition: border-color 0.25s ease;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--text-dim);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--pink);
+}
+
+.form-success {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 3rem 0;
+}
+
+.success-mark {
+  font-size: 2rem;
+  color: var(--pink);
+  line-height: 1;
+}
+
+/* ═══════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════ */
+
+.footer {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-name {
+  margin-bottom: 0.3rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.footer-top {
+  color: var(--text-dim) !important;
+  font-size: 0.62rem !important;
+}
+
+.footer-top:hover {
+  color: var(--pink) !important;
+}
+
+/* ═══════════════════════════════════════════════════════
+   SCROLL REVEAL INITIAL STATE
+═══════════════════════════════════════════════════════ */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(36px);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+
+@media (max-width: 1100px) {
+  .work-meta {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .work-desc { grid-column: 1 / -1; }
+  .btn-link { grid-column: 1 / -1; }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 8rem var(--page-x) 4rem;
+  }
+
+  .hero-right {
+    height: 60vw;
+    min-height: 300px;
+  }
+
+  .about-grid { grid-template-columns: 1fr; }
+  .about-headline { position: static; }
+  .skills-categories { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .work-meta { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  :root { --page-x: 1.5rem; }
+
+  .hero-name { font-size: clamp(2.8rem, 12vw, 5rem); }
+  .display-lg { font-size: clamp(3rem, 12vw, 6rem); }
+  .display-md { font-size: clamp(2rem, 8vw, 3.5rem); }
+  .display-sm { font-size: clamp(1.5rem, 6vw, 2.5rem); }
+
+  .work-item { padding: 3rem var(--page-x); }
+  .skills-categories { grid-template-columns: 1fr; }
+  .skill-col { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 0; }
+  .skill-col:last-child { border-bottom: none; }
+  .footer-inner { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+  .footer-right { align-items: flex-start; }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Samruddhi | Software & Product Engineer</title>
+  <meta name="description" content="Premium Product Engineering Portfolio for Samruddhi.">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Senior UX Custom Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-text editorial">SAMRUDDHI.</div>
+    <div class="loader-sub">SOFTWARE + PRODUCT ENGINEER</div>
+  </div>
+
+  <!-- 3D Background Canvas -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <header class="header">
+    <div class="logo">SAMRUDDHI.</div>
+    <nav class="nav crystal-nav">
+      <a href="#about" class="nav-link">ABOUT</a>
+      <a href="#work" class="nav-link">WORK</a>
+      <a href="#skills" class="nav-link">SKILLS</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
+    </nav>
+  </header>
+
+  <!-- Traditional Scrollable Content Overlay -->
+  <main id="content-scroll">
+    
+    <section id="hero" class="section hero-section asym-hero">
+      <div class="hero-left-content reveal-up">
+        <div class="hero-decorative-line">
+            <div class="hero-dot"></div>
+            <div class="hero-line"></div>
+        </div>
+        
+        <div class="hero-text-wrapper">
+            <span class="hero-label">SOFTWARE DEVELOPMENT ENGINEER</span>
+            <h1 class="hero-title editorial">Samruddhi</h1>
+            <p class="hero-subtitle">Building thoughtful software at the intersection<br>of engineering and product.</p>
+            
+            <div class="hero-actions">
+              <a href="#work" class="btn primary-btn interactive glow-btn">EXPLORE MY WORK</a>
+              <a href="#contact" class="btn secondary-btn interactive dark-btn">LET'S CONNECT</a>
+            </div>
+        </div>
+      </div>
+      
+      <div class="scroll-indicator static-scroll">
+          <div class="scroll-text">SCROLL</div>
+          <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container split-layout reveal-up">
+        <div class="split-text">
+          <h2 class="section-title editorial bold-ideas">Engineering with <span class="accent-text">Purpose</span></h2>
+          <p class="body-large">I am a Software Development Engineer who deeply cares about the end-user experience. I believe the best technical architectures are built not just for scale, but for clarity.</p>
+          <p class="body-regular text-muted">My background spans complex backend systems and premium frontend experiences, allowing me to bridge the gap between technical possibility and product reality.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2-Column Staggered Grid (Lusion Card Placements) -->
+    <section id="work" class="section work-section">
+      <div class="container">
+        <h2 class="section-title editorial reveal-mask">Selected <span class="accent-text">Work</span></h2>
+        <div class="staggered-grid" id="projects-grid">
+          <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container reveal-up">
+        <h2 class="section-title editorial">Technical <span class="accent-text">Arsenal</span></h2>
+        <div class="skills-grid" id="skills-grid">
+           <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container text-center reveal-up">
+        <h2 class="section-title editorial">Let's build something <span class="accent-text">beautiful.</span></h2>
+        <p class="body-large" style="margin: 2rem 0 4rem;">Currently open to new opportunities in software and product engineering.</p>
+        <div class="contact-links" id="contact-links">
+           <!-- Dynamically populated by JS -->
+        </div>
+        <div class="footer-bottom">
+          <p class="text-muted">© 2026 Samruddhi. Designed & Engineered with precision.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+  
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="./main.js?v=2"></script>
+</body>
+</html>

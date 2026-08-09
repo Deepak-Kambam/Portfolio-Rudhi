@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&display=swap');
+
+:root {
+  /* ── Backgrounds — very dark, slight purple/mauve warmth */
+  --bg:        #08080A;
+  --bg-2:      #0E0C12;
+  --surface:   #17141C;
+  --surface-2: #1D1A24;
+
+  /* ── Text */
+  --text:       #F5F0F3;
+  --text-2:     #E8DFE8;
+  --text-muted: #A090AA;
+  --text-dim:   #524055;
+
+  /* ── Pink accent */
+  --pink:       #F05A9B;
+  --pink-bright:#FF76B5;
+  --pink-dark:  #D94B8B;
+  --pink-glow:  rgba(240, 90, 155, 0.14);
+
+  /* ── Feminine warm palette */
+  --rose:           #E8789A;
+  --blush:          rgba(232, 120, 154, 0.08);
+  --rose-gold:      #C8856A;
+  --warm-gold:      #D4A574;
+  --lavender:       #9B8FC8;
+  --lavender-dim:   rgba(155, 143, 200, 0.12);
+
+  /* ── Borders — rose-tinted instead of cold white */
+  --border:   rgba(240, 90, 155, 0.10);
+  --border-2: rgba(240, 90, 155, 0.05);
+
+  /* ── Typography */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+
+  /* ── Spacing */
+  --page-x: clamp(2rem, 6vw, 7rem);
+
+  /* ── Z-index */
+  --z-bg:     0;
+  --z-canvas: 1;
+  --z-page:   10;
+  --z-nav:    100;
+  --z-cursor: 1000;
+}
